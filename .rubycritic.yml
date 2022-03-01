@@ -1,0 +1,9 @@
+no_browser: true
+formats:
+  - console
+  - html
+minimum_score: 95 # default is 0
+paths:
+  - app/
+  - lib/
+  - config/

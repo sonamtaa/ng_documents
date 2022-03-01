@@ -1,0 +1,77 @@
+require:
+  - ./lib/rubocop/cop/metrics/selise_method_length.rb
+  - rubocop-performance
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - bin/**/*
+    - db/schema.rb
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  TargetRubyVersion: 3.0.2
+  NewCops: enable
+
+Metrics/SeliseMethodLength:
+  CountComments: false
+  Max: 10
+  IgnoredMethods:
+    - change
+
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+Metrics/AbcSize:
+  IgnoredMethods:
+    - change
+
+Metrics/BlockLength:
+  IgnoredMethods:
+    - describe
+    - path
+    - put
+    - post
+    - configure
+    - response
+    - after_initialize
+    - define
+    - factory
+    - run_test!
+    - get
+    - context
+    - let
+
+Metrics/MethodLength:
+  Enabled: false # Use SeliseMethodLength instead
+
+Style/Documentation:
+  Enabled: false
+
+RSpec/FilePath:
+  Enabled: false
+
+RSpec/EmptyExampleGroup:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 6
+
+RSpec/MultipleExpectations:
+  Max: 10
+
+RSpec/ExampleLength:
+  Max: 15
+
+RSpec/ContextWording:
+  Prefixes:
+    - for
+    - when
+    - with
+    - without
+
+RSpec/DescribeClass:
+  Exclude:
+    - spec/tasks/*
+
+RSpec/VariableName:
+  IgnoredPatterns:
+    - accept-language
